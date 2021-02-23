@@ -1,2 +1,2 @@
 # Let-Us-Go
-Let's Go
+Let's learn Go
