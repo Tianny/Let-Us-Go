@@ -26,4 +26,10 @@ func main()  {
 	b()
 }
 
-	
+
+// entering: b
+// in b
+// entering: a
+// in a
+// leaving: a
+// leaving: b

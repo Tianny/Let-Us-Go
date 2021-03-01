@@ -25,3 +25,12 @@ func doDBOperations() {
 	// deferred function executed here just before actually returning, even if
 	// there is a return or abnormal termination before
 }
+
+
+
+// ok, connected to db
+// Defering the database disconnect.
+// Doing some DB operations ...
+// Oops! some crash or network error ...
+// Returning from function here!
+// ok, disconnected from db
