@@ -12,7 +12,7 @@ func un(s string)  {
 }
 
 func a()  {
-	defer un(trace("a"))
+	defer un(trace("a")) // 当执行到该条语句时，函数和参数表达式先得到计算，即 trace("a") 先可以获得计算
 	fmt.Println("in a")
 }
 
