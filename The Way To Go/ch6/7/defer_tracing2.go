@@ -12,7 +12,9 @@ func un(s string)  {
 }
 
 func a()  {
-	defer un(trace("a")) // 当执行到该条语句时，函数和参数表达式先得到计算，即 trace("a") 先可以获得计算
+	// 当执行到 defer 修饰的语句时，函数和参数表达式均可得到计算，但直到包含该 defer 语句的函数执行完毕时，defer 后的函数才会被执行
+	// 所以这里 trace("a") 会按正常顺序执行
+	defer un(trace("a")) 
 	fmt.Println("in a")
 }
 
