@@ -4,13 +4,13 @@ import "fmt"
 
 func main() {
 	for i := 0; i < 3; i++ {
-		defer func ()  {
+		defer func() {
 			fmt.Print(i) // 传递 i 的引用
 		}()
 	}
 
 	for i := 0; i < 3; i++ {
-		defer fmt.Print(i) // 传递 i 的拷贝
+		defer fmt.Print(i) // 在定义时已经获得了 i 的拷贝
 	}
 
 }
