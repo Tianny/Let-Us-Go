@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var orig string = "ABC"
+	var orig = "ABC"
 	var newS string
 
 	fmt.Printf("The size of ints is: %d\n", strconv.IntSize)
