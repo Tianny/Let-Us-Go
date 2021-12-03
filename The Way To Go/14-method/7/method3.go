@@ -18,10 +18,10 @@ type NamedPoint struct {
 	name string
 }
 
-// 可以覆写方法（像字段一样）：和内嵌类型方法具有同样名字的外层类型的方法会覆写内嵌类型对应的方法。
-// func (n *NamedPoint) Abs() float64 {
-// 	return n.Point.Abs() * 100.
-// }
+// Abs 可以覆写方法（像字段一样）：和内嵌类型方法具有同样名字的外层类型的方法会覆写内嵌类型对应的方法。
+func (n *NamedPoint) Abs() float64 {
+	return n.Point.Abs() * 100.
+}
 
 func main() {
 	n := &NamedPoint{Point{3, 4}, "Pythagoras"}
