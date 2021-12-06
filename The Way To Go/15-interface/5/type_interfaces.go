@@ -5,7 +5,6 @@ import (
 	"math"
 )
 
-
 type square struct {
 	side float32
 }
@@ -21,7 +20,6 @@ type shaper interface {
 func (sq *square) area() float32 {
 	return sq.side * sq.side
 }
-
 
 func (ci *circle) area() float32 {
 	return ci.radius * ci.radius * math.Pi
@@ -42,7 +40,6 @@ func main() {
 		fmt.Printf("The type of areaIntf is: %T\n", u)
 	}
 
-	
 }
 
 // 如果忽略 areaIntf.(*Square) 中的 * 号，会导致编译错误：impossible type assertion: Square does not implement Shaper (Area method has pointer receiver)。

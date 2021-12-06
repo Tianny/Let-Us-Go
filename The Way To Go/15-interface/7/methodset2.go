@@ -4,11 +4,11 @@ import "fmt"
 
 type List []int
 
-func (l List) Len() int  {
+func (l List) Len() int {
 	return len(l)
 }
 
-func (l *List) Append(val int)  {
+func (l *List) Append(val int) {
 	*l = append(*l, val)
 }
 
@@ -16,7 +16,7 @@ type Appender interface {
 	Append(int)
 }
 
-func CountInto(a Appender, start, end int)  {
+func CountInto(a Appender, start, end int) {
 	for i := start; i <= end; i++ {
 		a.Append(i)
 	}
@@ -27,12 +27,8 @@ type Lener interface {
 }
 
 func LongEnough(l Lener) bool {
-	return l.Len() * 10 > 42
+	return l.Len()*10 > 42
 }
-
-
-
-
 
 func main() {
 	// A bare value

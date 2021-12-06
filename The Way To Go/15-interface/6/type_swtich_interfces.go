@@ -21,12 +21,9 @@ func (sq *square) area() float32 {
 	return sq.side * sq.side
 }
 
-
 func (ci *circle) area() float32 {
 	return ci.radius * ci.radius * math.Pi
 }
-
-
 
 func main() {
 

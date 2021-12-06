@@ -23,11 +23,11 @@ func (r rectangle) area() float32 {
 }
 
 func main() {
-	r := rectangle{5,3}
+	r := rectangle{5, 3}
 	q := &square{5}
 	// shapes := []Shaper{Shaper(r), Shaper(q)}
 	// or shorter
-	shapes := []shaper{r,q}
+	shapes := []shaper{r, q}
 	fmt.Println("Looping through shapes for area ...")
 	for n := range shapes {
 		fmt.Println("Shape details: ", shapes[n])
