@@ -36,9 +36,8 @@ func main() {
 	// 一次性定义两个常量，只算一行，两个iota 表达式的值一样
 	// 赋值两个常量，iota 只会增长一次，而不会因为使用了两次就增长两次
 	const (
-		Apple, Banana     = iota + 1, iota + 2 // Apple=1 Banana=2
-		Cherimoya, Durian                      // Cherimoya=2 Durian=3
-		Elderberry, Fig                        // Elderberry=3, Fig=4
+		Apple, Banana   = iota + 1, iota + 2 // Apple=1 Banana=2
+		Elderberry, Fig                      // Elderberry=2, Fig=3
 	)
 
 	// 使用 iota 结合 位运算 表示资源状态的使用案例
