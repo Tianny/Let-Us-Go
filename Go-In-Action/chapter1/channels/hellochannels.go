@@ -17,8 +17,8 @@ func printer(ch chan int) {
 // main is the entry point for the program.
 func main() {
 	c := make(chan int)
-	go printer(c)
 	wg.Add(1)
+	go printer(c)
 
 	// Send 10 integers on the channel.
 	for i := 1; i <= 10; i++ {
