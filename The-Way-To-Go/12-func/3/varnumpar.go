@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	x := min(1, 2, 3, 0)
 	fmt.Printf("The minimum is %d\n", x)
+
 	slice := []int{1, 3, 5, 6}
 	x = min(slice...)
 	fmt.Printf("The minimum is %d\n", x)
