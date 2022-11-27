@@ -40,13 +40,6 @@ func main() {
 		Elderberry, Fig                      // Elderberry=2, Fig=3
 	)
 
-	// 使用 iota 结合 位运算 表示资源状态的使用案例
-	const (
-		Open    = 1 << iota // 0001
-		Close               // 0010
-		Pending             // 0100
-	)
-
 	const (
 		_  = iota             // 使用 _ 忽略不需要的 iota
 		KB = 1 << (10 * iota) // 1 << (10*1)
