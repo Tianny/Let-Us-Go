@@ -4,7 +4,7 @@
 package main
 
 import (
-	"LetUsGo/Go-In-Action/chapter7/pattern/runner"
+	"LetUsGo/Go-In-Action/ch7/pattern/runner"
 	"log"
 	"os"
 	"time"

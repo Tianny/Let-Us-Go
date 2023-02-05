@@ -1,3 +1,5 @@
+// Package runner Example is provided with help by Gabriel Aszalos.
+// Package runner manages the running and lifetime of a process.
 package runner
 
 import (
@@ -46,6 +48,27 @@ func (r *Runner) Add(tasks ...func(int)) {
 	r.tasks = append(r.tasks, tasks...)
 }
 
+// Start runs all tasks and monitors channel events.
+func (r *Runner) Start() error {
+	// We want to receive all interrupt based signals.
+	signal.Notify(r.interrupt, os.Interrupt)
+
+	// Run the different tasks on a different goroutine.
+	go func() {
+		r.complete <- r.run()
+	}()
+
+	select {
+	// Signaled when processing is done.
+	case err := <-r.complete:
+		return err
+
+	// Signaled when we run out of time.
+	case <-r.timeout:
+		return ErrTimeout
+	}
+}
+
 // run executes each registered task.
 func (r *Runner) run() error {
 	for id, task := range r.tasks {
@@ -73,26 +96,5 @@ func (r *Runner) gotInterrupt() bool {
 	// Continue running as normal.
 	default:
 		return false
-	}
-}
-
-// Start runs all tasks and monitors channel events.
-func (r *Runner) Start() error {
-	// We want to receive all interrupt based signals.
-	signal.Notify(r.interrupt, os.Interrupt)
-
-	// Run the different tasks on a different goroutine.
-	go func() {
-		r.complete <- r.run()
-	}()
-
-	select {
-	// Signaled when processing is done.
-	case err := <-r.complete:
-		return err
-
-	// Signaled when we run out of time.
-	case <-r.timeout:
-		return ErrTimeout
 	}
 }

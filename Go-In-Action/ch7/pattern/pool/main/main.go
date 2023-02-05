@@ -3,7 +3,7 @@
 package main
 
 import (
-	"LetUsGo/Go-In-Action/chapter7/pattern/pool"
+	"LetUsGo/Go-In-Action/ch7/pattern/pool"
 	"io"
 	"log"
 	"math/rand"
